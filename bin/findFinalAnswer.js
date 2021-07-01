@@ -1,20 +1,26 @@
 import { arr } from './arrayMethod.js'
+const log = console.log
 
 export function findFinalAnswer(answers) {
-  let answerArr = Object.keys(answers)
+  const answerArr = Object.keys(answers)
+  const lastProp = answerArr[answerArr.length - 1]
+
   if (answerArr.includes('find')) {
-    console.log('this is a find array')
-  } else {
-    let lastProp = answerArr[answerArr.length - 1]
-    //console.log(`last prop: ${lastProp}`)
-
-    let lastValue = arr[lastProp]
-    //console.log(`last value: ${JSON.stringify(lastValue, null, 2)}`)
-
+    let lastValue = arr.find[lastProp]
     let finalIndex = lastValue
       .map((o) => o.shortDesc)
       .indexOf(answers[lastProp])
-    //console.log(`finalIndex: ${finalIndex}`)
+
+    log(`last prop: ${lastProp}`)
+    log(`last value: ${JSON.stringify(lastValue, null, 2)}`)
+    log(`final index: ${finalIndex}`)
+
+    return arr.find[lastProp][finalIndex]
+  } else {
+    let lastValue = arr[lastProp]
+    let finalIndex = lastValue
+      .map((o) => o.shortDesc)
+      .indexOf(answers[lastProp])
 
     return arr[lastProp][finalIndex]
   }
