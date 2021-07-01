@@ -30,7 +30,7 @@ const questions = [
     message: `I'm trying to find`,
     choices: ['one item', 'one or many items'],
     when(answers) {
-      return answers.structure === 'find'
+      return answers.arrayBasis === 'find items'
     },
   },
   {
@@ -52,27 +52,32 @@ const questions = [
   },
 ]
 
-function createArrAnswers(type, prompt, arrayInput) {
+function createArrAnswers(
+  type,
+  prompt,
+  arrayInput = arr,
+  answerBasis = 'arrayBasis'
+) {
   questions.push({
     type: 'list',
     name: type,
     message: `I need to ${type}`,
     choices: arrayInput[type].map((item) => item.shortDesc),
     when(answers) {
-      return answers.arrayBasis === prompt
+      return answers[answerBasis] === prompt
     },
   })
 }
 
 const fullQuestions = () => {
-  createArrAnswers('add', 'add items or other arrays', arr)
-  createArrAnswers('remove', 'remove items', arr)
-  createArrAnswers('iterate', 'walk over items', arr)
-  createArrAnswers('string', 'return a string', arr)
-  createArrAnswers('order', 'order an array', arr)
-  createArrAnswers('other', 'something else', arr)
-  createArrAnswers('find', 'one item', arr['single'])
-  createArrAnswers('find', 'one or many items', arr['many'])
+  createArrAnswers('add', 'add items or other arrays')
+  createArrAnswers('remove', 'remove items')
+  createArrAnswers('iterate', 'walk over items')
+  createArrAnswers('string', 'return a string')
+  createArrAnswers('order', 'order an array')
+  createArrAnswers('other', 'something else')
+  createArrAnswers('single', 'one item', arr.find, 'find')
+  createArrAnswers('many', 'one or many items', arr.find, 'find')
 }
 
 fullQuestions()
