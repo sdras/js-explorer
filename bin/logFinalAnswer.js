@@ -3,10 +3,11 @@ import boxen from 'boxen'
 import figures from 'figures'
 import hyperlinker from 'hyperlinker'
 import supportsHyperlinks from 'supports-hyperlinks'
+const log = console.log
 
 export function logFinalAnswer(finalAnswer) {
   log(chalk.yellowBright.bold.underline(`\nArray.${finalAnswer.name}()`))
-  log(chalk.yellow(finalAnswer.desc + '\n'))
+  log(finalAnswer.desc + '\n')
 
   const codeBox = {
     padding: 1,
@@ -23,11 +24,15 @@ export function logFinalAnswer(finalAnswer) {
 
   if (supportsHyperlinks.stdout) {
     log(
-      chalk.blue.bold(
+      chalk.yellow(
         hyperlinker(`\nsee the docs ${figures.arrowRight} `) + `${mozLink}\n`
       )
     )
   } else {
-    log(chalk.blue.bold(`\ndocs link ${figures.arrowRight} `) + `${mozLink}\n`)
+    log(
+      chalk.blueBright(
+        chalk.bold(`\ndocs link ${figures.arrowRight} `) + `${mozLink}\n`
+      )
+    )
   }
 }
