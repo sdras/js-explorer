@@ -11,6 +11,7 @@ export const greeting = () => {
     chalk.yellow(figures.star) +
     chalk.cyan(' Welcome to the JavaScript Explorer! ') +
     chalk.yellow(figures.star)
+
   const welcomeBox = {
     padding: 1,
     margin: 1,

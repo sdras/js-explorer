@@ -1,5 +1,5 @@
 export const arr = {
-  adding: [
+  add: [
     {
       name: 'splice',
       shortDesc: 'element/s to an array',
@@ -34,7 +34,7 @@ console.log(arr3);`,
       output: `[5, 1, 8, 'a', 'b', 'c']`,
     },
   ],
-  removing: [
+  remove: [
     {
       name: 'splice',
       shortDesc: 'element/s from an array',
@@ -98,7 +98,7 @@ console.log(arrString, dateString);`,
       output: `"5,1,8 12/26/2017, 6:54:49 PM"`,
     },
   ],
-  ordering: [
+  order: [
     {
       name: 'reverse',
       shortDesc: 'reverse the order of the array',

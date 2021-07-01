@@ -1,4 +1,6 @@
-export const questions = [
+import { arr } from './arrayMethod.js'
+
+const questions = [
   {
     type: 'list',
     name: 'structure',
@@ -24,6 +26,15 @@ export const questions = [
   },
   {
     type: 'list',
+    name: 'find',
+    message: `I'm trying to find`,
+    choices: ['one item', 'one or many items'],
+    when(answers) {
+      return answers.structure === 'find'
+    },
+  },
+  {
+    type: 'list',
     name: 'objectBasis',
     message: 'I have an object, I would like to...',
     choices: [
@@ -40,3 +51,30 @@ export const questions = [
     },
   },
 ]
+
+function createArrAnswers(type, prompt, arrayInput) {
+  questions.push({
+    type: 'list',
+    name: type,
+    message: `I need to ${type}`,
+    choices: arrayInput[type].map((item) => item.shortDesc),
+    when(answers) {
+      return answers.arrayBasis === prompt
+    },
+  })
+}
+
+const fullQuestions = () => {
+  createArrAnswers('add', 'add items or other arrays', arr)
+  createArrAnswers('remove', 'remove items', arr)
+  createArrAnswers('iterate', 'walk over items', arr)
+  createArrAnswers('string', 'return a string', arr)
+  createArrAnswers('order', 'order an array', arr)
+  createArrAnswers('other', 'something else', arr)
+  createArrAnswers('find', 'one item', arr['single'])
+  createArrAnswers('find', 'one or many items', arr['many'])
+}
+
+fullQuestions()
+
+export { questions }
