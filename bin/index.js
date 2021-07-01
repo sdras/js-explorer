@@ -5,11 +5,14 @@ import chalk from 'chalk'
 import inquirer from 'inquirer'
 import { greeting } from './greeting.js'
 import { questions } from './questions.js'
+import { findFinalAnswer } from './findFinalAnswer.js'
 const log = console.log
 
 greeting()
 
 inquirer.prompt(questions).then((answers) => {
-  log(chalk.blue.bold('\nAnswers:'))
-  log(JSON.stringify(answers, null, '  '))
+  let finalAnswer = findFinalAnswer(answers)
+
+  log(chalk.blue.bold('\nFinal Answer:'))
+  log(JSON.stringify(finalAnswer, null, '  '))
 })

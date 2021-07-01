@@ -79,7 +79,6 @@ const fullQuestions = () => {
   createArrAnswers('single', 'one item', arr.find, 'find')
   createArrAnswers('many', 'one or many items', arr.find, 'find')
 }
-
 fullQuestions()
 
 export { questions }
