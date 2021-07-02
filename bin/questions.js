@@ -95,12 +95,17 @@ const fullQuestions = () => {
   createAnswers('many', 'one or many items', arr.find, 'find')
 
   //objects
-  createAnswers('createObj', 'create an object', obj, objBasis)
-  createAnswers('createProp', 'create properties', obj, objBasis)
-  createAnswers('infoObj', 'get information about an object', obj, objBasis)
-  createAnswers('noChange', 'restrict changes to an object', obj, objBasis)
-  createAnswers('createString', 'create a string from an object', obj, objBasis)
-  createAnswers('prototype', 'manage prototypes', obj, objBasis)
+  createAnswers('createObj', 'create an object', obj, 'objBasis')
+  createAnswers('createProp', 'create properties', obj, 'objBasis')
+  createAnswers('infoObj', 'get information about an object', obj, 'objBasis')
+  createAnswers('noChange', 'restrict changes to an object', obj, 'objBasis')
+  createAnswers(
+    'createString',
+    'create a string from an object',
+    obj,
+    'objBasis'
+  )
+  createAnswers('prototype', 'manage prototypes', obj, 'objBasis')
   //objects with details, which is nested
   createAnswers(
     'details',
