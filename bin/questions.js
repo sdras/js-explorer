@@ -1,4 +1,5 @@
 import { arr } from './arrayMethod.js'
+import { obj } from './objectMethod.js'
 
 const questions = [
   {
@@ -27,7 +28,7 @@ const questions = [
   {
     type: 'list',
     name: 'find',
-    message: `I'm trying to find`,
+    message: `I'm trying to find `,
     choices: ['one item', 'one or many items'],
     when(answers) {
       return answers.arrayBasis === 'find items'
@@ -35,7 +36,7 @@ const questions = [
   },
   {
     type: 'list',
-    name: 'objectBasis',
+    name: 'objBasis',
     message: 'I have an object, I would like to...',
     choices: [
       'create an object',
@@ -50,19 +51,31 @@ const questions = [
       return answers.structure === 'object'
     },
   },
+  {
+    type: 'list',
+    name: 'infoProp',
+    message: 'I need to get ',
+    choices: [
+      'details about the property',
+      'a list of all of the keys and/or values',
+    ],
+    when(answers) {
+      return answers.objBasis === 'get information about properties'
+    },
+  },
 ]
 
-function createArrAnswers(
+function createAnswers(
   type,
   prompt,
-  arrayInput = arr,
+  structInput = arr,
   answerBasis = 'arrayBasis'
 ) {
   questions.push({
     type: 'list',
     name: type,
     message: `I need to ${type}`,
-    choices: arrayInput[type].map((item) => item.shortDesc),
+    choices: structInput[type].map((item) => item.shortDesc),
     when(answers) {
       return answers[answerBasis] === prompt
     },
@@ -70,14 +83,37 @@ function createArrAnswers(
 }
 
 const fullQuestions = () => {
-  createArrAnswers('add', 'add items or other arrays')
-  createArrAnswers('remove', 'remove items')
-  createArrAnswers('iterate', 'walk over items')
-  createArrAnswers('string', 'return a string')
-  createArrAnswers('order', 'order an array')
-  createArrAnswers('other', 'something else')
-  createArrAnswers('single', 'one item', arr.find, 'find')
-  createArrAnswers('many', 'one or many items', arr.find, 'find')
+  // arrays
+  createAnswers('add', 'add items or other arrays')
+  createAnswers('remove', 'remove items')
+  createAnswers('iterate', 'walk over items')
+  createAnswers('string', 'return a string')
+  createAnswers('order', 'order an array')
+  createAnswers('other', 'something else')
+  //arrays with find, which is nested
+  createAnswers('single', 'one item', arr.find, 'find')
+  createAnswers('many', 'one or many items', arr.find, 'find')
+
+  //objects
+  createAnswers('createObj', 'create an object', obj, objBasis)
+  createAnswers('createProp', 'create properties', obj, objBasis)
+  createAnswers('infoObj', 'get information about an object', obj, objBasis)
+  createAnswers('noChange', 'restrict changes to an object', obj, objBasis)
+  createAnswers('createString', 'create a string from an object', obj, objBasis)
+  createAnswers('prototype', 'manage prototypes', obj, objBasis)
+  //objects with details, which is nested
+  createAnswers(
+    'details',
+    'details about the property',
+    obj.infoProp,
+    'infoProp'
+  )
+  createAnswers(
+    'list',
+    'a list of all of the keys and/or values',
+    obj.infoProp,
+    'infoProp'
+  )
 }
 fullQuestions()
 

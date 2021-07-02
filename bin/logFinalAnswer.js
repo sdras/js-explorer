@@ -19,8 +19,7 @@ export function logFinalAnswer(finalAnswer) {
   }
   const code =
     chalk.blackBright('Usage:\n') +
-    chalk.cyanBright(`let arr = [5, 1, 8];
-  ${finalAnswer.example}\n\n`) +
+    chalk.cyanBright(`let arr = [5, 1, 8];\n${finalAnswer.example}\n\n`) +
     chalk.blackBright('Output:\n') +
     chalk.cyan(finalAnswer.output)
 

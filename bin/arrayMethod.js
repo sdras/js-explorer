@@ -149,7 +149,7 @@ console.log(arr);`,
       shortDesc: 'executing a function I will create for each element',
       desc: 'The forEach() method executes a provided function once for each array element.',
       example: `arr.forEach((element) => {
-<span>&nbsp;&nbsp;</span>console.log(element)
+  console.log(element)
 });`,
       output: `5
 1
@@ -171,8 +171,8 @@ console.log(map);`,
       example: `let iterator = arr.entries();
 console.log(iterator.next().value);`,
       output: `[0, 5]
-<span class="comment">// the 0 is the index,</span>
-<span class="comment">// the 5 is the first number</span>`,
+// the 0 is the index,
+// the 5 is the first number`,
     },
   ],
   find: {
@@ -227,7 +227,7 @@ console.log(iterator.next().value);`,
         shortDesc: 'a value by reducing the Array, finish to start',
         desc: 'Apply a function against an accumulator and each value of the array (from right-to-left) as to reduce it to a single value.',
         example: `[arr, [0, 1]].reduceRight((a, b) => {
-  <span>&nbsp;&nbsp;</span>return a.concat(b)
+    return a.concat(b)
   }, [])`,
         output: `[0, 1, 5, 1, 8]`,
       },
