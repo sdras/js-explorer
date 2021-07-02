@@ -7,9 +7,11 @@ export const obj = {
       shortDesc: 'create a new object',
       desc: `Creates a new object with the specified prototype object and properties.
   
-  <strong>Important note for beginners!</strong> It's more common to create an object the way that it's shown at the top of the example, like this ${chalk.cyan(
-    'let obj = { a: 1 };'
-  )}`,
+  ${chalk.bold(
+    'Important note for beginners!'
+  )} It's more common to create an object the way that it's shown at the top of the example, like this ${chalk.cyan(
+        'let obj = { a: 1 };'
+      )}`,
       example: `const obj2 = Object.create(obj);
 console.log(obj2);`,
       output: `Object {
@@ -39,9 +41,11 @@ console.log(copy);`,
       shortDesc: 'a new property or modify an existing one',
       desc: `Adds the named property described by a given descriptor to an object.
   
-  <strong>Important note for beginners!</strong> It's more common to use dot or square bracket notation to create a new property or modify an existing one. Like this: ${chalk.cyan(
-    'obj.a = 1'
-  )} or ${chalk.cyan(
+  ${chalk.bold(
+    'Important note for beginners!'
+  )} It's more common to use dot or square bracket notation to create a new property or modify an existing one. Like this: ${chalk.cyan(
+        'obj.a = 1'
+      )} or ${chalk.cyan(
         'obj[a] = 1'
       )}. This isn't technically a built-in method, that's why it's not included.`,
       example: `Object.defineProperty(obj, 'd', {
@@ -59,9 +63,11 @@ console.log(obj.d);`,
       shortDesc: 'one or more properties or modify existing properties',
       desc: `Adds one or more properties described by a given descriptor to an object.
   
-  <strong>Important note for beginners!</strong> It's more common to use dot or square bracket notation to create a new property or modify an existing one. Like this: ${chalk.cyan(
-    'obj.a = 1'
-  )} or ${chalk.cyan(
+  ${chalk.bold(
+    'Important note for beginners!'
+  )} It's more common to use dot or square bracket notation to create a new property or modify an existing one. Like this: ${chalk.cyan(
+        'obj.a = 1'
+      )} or ${chalk.cyan(
         'obj[a] = 1'
       )}. This isn't technically a built-in method, that's why it's not included.`,
       example: `Object.defineProperties(obj, {
