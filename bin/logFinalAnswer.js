@@ -1,6 +1,7 @@
 import chalk from 'chalk'
 import boxen from 'boxen'
 import figures from 'figures'
+import wrapAnsi from 'wrap-ansi'
 import hyperlinker from 'hyperlinker'
 import supportsHyperlinks from 'supports-hyperlinks'
 const log = console.log
@@ -9,7 +10,7 @@ const divider = `\n.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo`
 export function logFinalAnswer(finalAnswer) {
   log(chalk.blackBright(divider))
   log(chalk.yellowBright.bold.underline(`\nArray.${finalAnswer.name}()`))
-  log(finalAnswer.desc + '\n')
+  log(wrapAnsi(finalAnswer.desc + '\n', 70))
 
   const codeBox = {
     padding: 1,
