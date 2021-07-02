@@ -10,7 +10,7 @@ const divider = `\n.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo`
 export function logFinalAnswer(finalAnswer) {
   log(chalk.blackBright(divider))
   log(chalk.yellowBright.bold.underline(`\nArray.${finalAnswer.name}()`))
-  log(wrapAnsi(finalAnswer.desc + '\n', 70))
+  log(wrapAnsi('\n' + finalAnswer.desc + '\n', 70))
 
   const codeBox = {
     padding: 1,
