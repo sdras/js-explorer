@@ -38,7 +38,7 @@ console.log(copy);`,
   createProp: [
     {
       name: 'defineProperty',
-      shortDesc: 'a new property or modify an existing one',
+      shortDesc: 'create a new property or modify an existing one',
       desc: `Adds the named property described by a given descriptor to an object.
   
   ${chalk.bold(
@@ -60,7 +60,7 @@ console.log(obj.d);`,
     },
     {
       name: 'defineProperties',
-      shortDesc: 'one or more properties or modify existing properties',
+      shortDesc: 'create one or more properties or modify existing properties',
       desc: `Adds one or more properties described by a given descriptor to an object.
   
   ${chalk.bold(
@@ -88,7 +88,7 @@ console.log(obj);`,
   infoObj: [
     {
       name: 'isExtensible',
-      shortDesc: 'if more properties can be added',
+      shortDesc: 'find out if more properties can be added',
       desc: 'Determines if extending of an object is allowed.',
       example: `console.log(Object.isExtensible(obj));
 Object.freeze(obj);
@@ -98,7 +98,7 @@ false`,
     },
     {
       name: 'is',
-      shortDesc: 'if two references point to the same object',
+      shortDesc: 'find out if two references point to the same object',
       desc: `Compares if two references point to the same object. Equates all NaN values (which differs from both Abstract Equality Comparison and Strict Equality Comparison). This one is a little weird, and the MDN docs are a bit misleading. It's more useful to use triple equals === to check equality. More info here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#When_to_use_Object.is_versus_triple_equals`,
       example: `let obj2 = {
   a: 1,
@@ -113,7 +113,7 @@ true`,
     },
     {
       name: 'isFrozen',
-      shortDesc: `if an object and its properties can't be modified`,
+      shortDesc: `find out if an object and its properties can't be modified`,
       desc: 'Determines if an object is frozen.',
       example: `console.log(Object.isFrozen(obj));
 Object.freeze(obj);
@@ -123,7 +123,7 @@ true`,
     },
     {
       name: 'isSealed',
-      shortDesc: `if an object can't be modified (its properties can be, though)`,
+      shortDesc: `find out if an object can't be modified (its properties can be, though)`,
       desc: `Determines if the descriptor of its properties can't be changed and new properties can't be created.`,
       example: `Object.seal(obj);
 
@@ -132,7 +132,7 @@ console.log(Object.isSealed(obj));`,
     },
     {
       name: 'isPrototypeOf',
-      shortDesc: `if the object is in the prototype chain.`,
+      shortDesc: `find out if the object is in the prototype chain.`,
       desc: `Returns a boolean indicating whether the object this method is called upon is in the prototype chain of the specified object.`,
       example: `function Rect() {}
 
@@ -178,7 +178,7 @@ console.log(obj.d);`,
   createString: [
     {
       name: 'toString',
-      shortDesc: `string representation of the object.`,
+      shortDesc: `create a string representation of the object.`,
       desc: `The ${chalk.cyan(
         'toString()'
       )} method returns a string representing the object. Though this is the built-in method available, it's usually more useful to use ${chalk.cyan(
@@ -191,7 +191,7 @@ console.log(obj.a.toString());`,
     },
     {
       name: 'toLocaleString',
-      shortDesc: `localized string representation of the object.`,
+      shortDesc: `create a localized string representation of the object.`,
       desc: `The ${chalk.cyan(
         'toLocaleString()'
       )} method returns a string representing the object. This method is meant to be overridden by derived objects for locale-specific purposes. In human terms: this means if you have something that has different data based on location, such as date methods, it will give you a different time format`,
@@ -207,7 +207,7 @@ console.log(obj.d.toLocaleString());`,
     details: [
       {
         name: 'getOwnPropertyDescriptor',
-        shortDesc: `details about a property`,
+        shortDesc: `get details about a property`,
         desc: 'Returns a property descriptor for a named property on an object.',
         example: `const o = Object.getOwnPropertyDescriptor(obj, 'a');
   
@@ -221,7 +221,7 @@ console.log(obj.d.toLocaleString());`,
       },
       {
         name: 'getOwnPropertyDescriptors',
-        shortDesc: `details about all the properties on an object`,
+        shortDesc: `get details about all the properties on an object`,
         desc: 'Returns an object containing all own property descriptors for an object.',
         example: `console.log(Object.getOwnPropertyDescriptors(obj))`,
         output: `Object {
@@ -247,7 +247,7 @@ console.log(obj.d.toLocaleString());`,
       },
       {
         name: 'propertyIsEnumerable',
-        shortDesc: `if a property can be traversed with a for...in loop`,
+        shortDesc: `find out if a property can be traversed with a for...in loop`,
         desc: 'Returns a boolean indicating if the internal ECMAScript [[Enumerable]] attribute is set. This can be used to see if something is a built-in or user-defined method because built-in properties tend to not be enumerable',
         example: `console.log(obj.propertyIsEnumerable('a'));
   console.log(Math.propertyIsEnumerable('random'));`,
@@ -256,7 +256,7 @@ console.log(obj.d.toLocaleString());`,
       },
       {
         name: 'hasOwnProperty',
-        shortDesc: `if a property exists as a direct property of the object`,
+        shortDesc: `find out if a property exists as a direct property of the object`,
         desc: 'Returns a boolean indicating whether an object contains the specified property as a direct property of that object and not inherited through the prototype chain.',
         example: `console.log(obj.hasOwnProperty('a'));
   delete obj.a;
@@ -268,28 +268,28 @@ console.log(obj.d.toLocaleString());`,
     list: [
       {
         name: 'keys',
-        shortDesc: `keys`,
+        shortDesc: `list keys`,
         desc: `Returns an array containing the names of all of the object's keys that can be looped through, in the order that they would be looped through.`,
         example: `console.log(Object.keys(obj));`,
         output: `["a", "b", "c"]`,
       },
       {
         name: 'values',
-        shortDesc: `values`,
+        shortDesc: `list values`,
         desc: `Returns an array containing the names of all of the object's values that can be looped through, in the order that they would be looped through.`,
         example: `console.log(Object.values(obj));`,
         output: `[1, 2, 3]`,
       },
       {
         name: 'entries',
-        shortDesc: `keys and values`,
+        shortDesc: `list keys and values`,
         desc: `Returns a nested array containing the names of all of the object's key/value pairs that can be looped through, in the order that they would be looped through.`,
         example: `console.log(Object.entries(obj));`,
         output: `[["a", 1], ["b", 2], ["c", 3]]`,
       },
       {
         name: 'getOwnPropertyNames',
-        shortDesc: `keys, even if you can't loop through them`,
+        shortDesc: `list keys, even if you can't loop through them`,
         desc: `Returns an array containing the names of all of the given object's own enumerable and non-enumerable properties. Does the same thing as ${chalk.cyan(
           'Object.keys()'
         )}, retrieving the keys in the object, but ${chalk.cyan(
