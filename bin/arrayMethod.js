@@ -1,3 +1,5 @@
+import chalk from 'chalk'
+
 export const arr = {
   add: [
     {
@@ -63,7 +65,9 @@ console.log(arr);`,
       name: 'slice',
       shortDesc:
         'one or more elements in order for use, leaving the array as is',
-      desc: 'The <code>slice()</code> method returns a shallow copy of a portion of an array into a new array object. You can specify either just the beginning element (where end will default to the arrays length) or both the beginning and the end, comma-separated. The original array will not be modified.',
+      desc: `The ${chalk.bold(
+        'slice()'
+      )} method returns a shallow copy of a portion of an array into a new array object. You can specify either just the beginning element (where end will default to the arrays length) or both the beginning and the end, comma-separated. The original array will not be modified.`,
       example: `let slicedArr = arr.slice(1);
 console.log(arr);
 console.log(slicedArr);`,
@@ -75,8 +79,9 @@ console.log(slicedArr);`,
     {
       name: 'join',
       shortDesc: 'join all elements of the array into a string',
-      desc: `Joins all elements of an array into a string. You can join it together as is or with something in between, <code>elements.join(' -
-  ')</code> gives you <code>foo - bar</code>`,
+      desc: `Joins all elements of an array into a string. You can join it together as is or with something in between, ${chalk.bold(
+        'elements.join(' - ')'
+      )} gives you ${chalk.bold('foo - bar')}`,
       example: `console.log(arr.join());`,
       output: `"5,1,8"`,
     },
@@ -112,7 +117,9 @@ console.log(arr);`,
       shortDesc: 'sort the items of the array',
       desc: `Sorts the elements of an array in place and returns the array.
 
-<strong>Important note:</strong> If compareFunction is not supplied, elements are sorted by converting them to strings and comparing strings in Unicode code point order. For example, "Banana" comes before "cherry". In a numeric sort, 9 comes before 80, but because numbers are converted to strings, "80" comes before "9" in Unicode order. The docs have more information to clarify.`,
+${chalk.bold(
+  'Important note:'
+)} If compareFunction is not supplied, elements are sorted by converting them to strings and comparing strings in Unicode code point order. For example, "Banana" comes before "cherry". In a numeric sort, 9 comes before 80, but because numbers are converted to strings, "80" comes before "9" in Unicode order. The docs have more information to clarify.`,
       example: `arr.sort();
 console.log(arr);`,
       output: `[1, 5, 8]`,
@@ -167,7 +174,9 @@ console.log(map);`,
     {
       name: 'entries',
       shortDesc: 'creating an iterator object',
-      desc: 'Returns a new Array Iterator object that contains the key/value pairs for each index in the array. There are a lot of uses for iterators, as well as other methods used with it in conjuction, like <code>values</code> and <code>keys</code>',
+      desc: `Returns a new Array Iterator object that contains the key/value pairs for each index in the array. There are a lot of uses for iterators, as well as other methods used with it in conjuction, like ${chalk.bold(
+        'values'
+      )} and ${chalk.bold('keys')}`,
       example: `let iterator = arr.entries();
 console.log(iterator.next().value);`,
       output: `[0, 5]
@@ -201,7 +210,9 @@ console.log(iterator.next().value);`,
       {
         name: 'find',
         shortDesc: 'the first element that satisfies a condition',
-        desc: 'Returns the found value in the array, if an element in the array satisfies the provided testing function or undefined if not found. Similar to <code>findIndex()</code>, but it returns the item instead of the index.',
+        desc: `Returns the found value in the array, if an element in the array satisfies the provided testing function or undefined if not found. Similar to ${chalk.bold(
+          'findIndex()'
+        )}, but it returns the item instead of the index.`,
         example: `let isTiny = (el) => el < 2;
   console.log(arr.find(isTiny));`,
         output: `1`,
@@ -209,7 +220,9 @@ console.log(iterator.next().value);`,
       {
         name: 'findIndex',
         shortDesc: 'the first index of an item that satisfies a condition',
-        desc: 'Returns the index of the first element in the array that satisfies the provided testing function. Otherwise -1 is returned. Similar to <code>find()</code>, but it returns the index instead of the item.',
+        desc: `Returns the index of the first element in the array that satisfies the provided testing function. Otherwise -1 is returned. Similar to ${chalk.bold(
+          'find()'
+        )}, but it returns the index instead of the item.`,
         example: `let isBig = (el) => el > 6;
   console.log(arr.findIndex(isBig));`,
         output: `2`,

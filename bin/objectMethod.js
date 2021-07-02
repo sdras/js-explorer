@@ -1,3 +1,5 @@
+import chalk from 'chalk'
+
 export const obj = {
   createObj: [
     {
@@ -5,7 +7,9 @@ export const obj = {
       shortDesc: 'create a new object',
       desc: `Creates a new object with the specified prototype object and properties.
   
-  <strong>Important note for beginners!</strong> It's more common to create an object the way that it's shown at the top of the example, like this <code>let obj = { a: 1 };</code>`,
+  <strong>Important note for beginners!</strong> It's more common to create an object the way that it's shown at the top of the example, like this ${chalk.cyan(
+    'let obj = { a: 1 };'
+  )}`,
       example: `const obj2 = Object.create(obj);
 console.log(obj2);`,
       output: `Object {
@@ -17,7 +21,9 @@ console.log(obj2);`,
     {
       name: 'assign',
       shortDesc: 'make a copy of an object',
-      desc: `Copies the values of all enumerable own properties from one or more source objects to a target object. It will return the target object. Though not technically a built in object method, it's more common when using ES6 to make use of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator" target="_blank">Spread Operator</a>, by using <code>...</code>`,
+      desc: `Copies the values of all enumerable own properties from one or more source objects to a target object. It will return the target object. Though not technically a built in object method, it's more common when using ES6 to make use of the Spread Operator, by using ${chalk.cyan(
+        '...'
+      )} More info here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator"`,
       example: `const copy = Object.assign({}, obj);
 console.log(copy);`,
       output: `Object {
@@ -33,7 +39,11 @@ console.log(copy);`,
       shortDesc: 'a new property or modify an existing one',
       desc: `Adds the named property described by a given descriptor to an object.
   
-  <strong>Important note for beginners!</strong> It's more common to use dot or square bracket notation to create a new property or modify an existing one. Like this: <code>obj.a = 1</code> or <code>obj[a] = 1</code>. This isn't technically a built-in method, that's why it's not included.`,
+  <strong>Important note for beginners!</strong> It's more common to use dot or square bracket notation to create a new property or modify an existing one. Like this: ${chalk.cyan(
+    'obj.a = 1'
+  )} or ${chalk.cyan(
+        'obj[a] = 1'
+      )}. This isn't technically a built-in method, that's why it's not included.`,
       example: `Object.defineProperty(obj, 'd', {
   enumerable: true,
   configurable: true,
@@ -49,15 +59,19 @@ console.log(obj.d);`,
       shortDesc: 'one or more properties or modify existing properties',
       desc: `Adds one or more properties described by a given descriptor to an object.
   
-  <strong>Important note for beginners!</strong> It's more common to use dot or square bracket notation to create a new property or modify an existing one. Like this: <code>obj.a = 1</code> or <code>obj[a] = 1</code>. This isn't technically a built-in method, that's why it's not included.`,
+  <strong>Important note for beginners!</strong> It's more common to use dot or square bracket notation to create a new property or modify an existing one. Like this: ${chalk.cyan(
+    'obj.a = 1'
+  )} or ${chalk.cyan(
+        'obj[a] = 1'
+      )}. This isn't technically a built-in method, that's why it's not included.`,
       example: `Object.defineProperties(obj, {
   d: {
-<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>value: 4,
-<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>writable: true
+    value: 4,
+    writable: true
   },
   e: {
-<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>value: 5,
-<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>writable: true
+    value: 5,
+    writable: true
   }
 });
 
@@ -79,7 +93,7 @@ false`,
     {
       name: 'is',
       shortDesc: 'if two references point to the same object',
-      desc: `Compares if two references point to the same object. Equates all NaN values (which differs from both Abstract Equality Comparison and Strict Equality Comparison). This one is a little weird, and the MDN docs are a bit misleading. It's <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#When_to_use_Object.is_versus_triple_equals" target="_blank">more useful to use triple equals <code>===</code></a> to check equality`,
+      desc: `Compares if two references point to the same object. Equates all NaN values (which differs from both Abstract Equality Comparison and Strict Equality Comparison). This one is a little weird, and the MDN docs are a bit misleading. It's more useful to use triple equals === to check equality. More info here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#When_to_use_Object.is_versus_triple_equals`,
       example: `let obj2 = {
   a: 1,
   b: 2,
@@ -159,7 +173,11 @@ console.log(obj.d);`,
     {
       name: 'toString',
       shortDesc: `string representation of the object.`,
-      desc: `The <code>toString()</code> method returns a string representing the object. Though this is the built-in method available, it's usually more useful to use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank"><code>JSON.stringify()</code></a>`,
+      desc: `The ${chalk.cyan(
+        'toString()'
+      )} method returns a string representing the object. Though this is the built-in method available, it's usually more useful to use ${chalk.cyan(
+        'JSON.stringify()'
+      )}. More info here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify`,
       example: `console.log(obj.toString());
 console.log(obj.a.toString());`,
       output: `"[object Object]"
@@ -168,7 +186,9 @@ console.log(obj.a.toString());`,
     {
       name: 'toLocaleString',
       shortDesc: `localized string representation of the object.`,
-      desc: `The <code>toLocaleString()</code> method returns a string representing the object. This method is meant to be overridden by derived objects for locale-specific purposes. In human terms: this means if you have something that has different data based on location, such as date methods, it will give you a different time format`,
+      desc: `The ${chalk.cyan(
+        'toLocaleString()'
+      )} method returns a string representing the object. This method is meant to be overridden by derived objects for locale-specific purposes. In human terms: this means if you have something that has different data based on location, such as date methods, it will give you a different time format`,
       example: `obj.d = new Date();
 
 console.log(obj.d);
@@ -264,7 +284,11 @@ console.log(obj.d.toLocaleString());`,
       {
         name: 'getOwnPropertyNames',
         shortDesc: `keys, even if you can't loop through them`,
-        desc: `Returns an array containing the names of all of the given object's own enumerable and non-enumerable properties. Does the same thing as <code>Object.keys()</code>, retrieving the keys in the object, but <code>getOwnPropertyNames()</code> will include properties that can't be looped through.`,
+        desc: `Returns an array containing the names of all of the given object's own enumerable and non-enumerable properties. Does the same thing as ${chalk.cyan(
+          'Object.keys()'
+        )}, retrieving the keys in the object, but ${chalk.cyan(
+          'getOwnPropertyNames()'
+        )} will include properties that can't be looped through.`,
         example: `Object.defineProperty(obj, 'a', {
     enumerable: false
   });
@@ -288,7 +312,9 @@ console.log(Object.getPrototypeOf(proto) === obj);`,
     {
       name: 'setPrototypeOf',
       shortDesc: `set a prototype of the object.`,
-      desc: `Warning: this method is really slow. Use with caution, or replace with <code>Object.create()</code>. Sets the prototype (i.e., the internal [[Prototype]] property).`,
+      desc: `Warning: this method is really slow. Use with caution, or replace with ${chalk.cyan(
+        'Object.create()'
+      )}. Sets the prototype (i.e., the internal [[Prototype]] property).`,
       example: `const dict = Object.setPrototypeOf({}, obj);
 
 console.log(dict);`,
