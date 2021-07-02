@@ -63,7 +63,43 @@ const questions = [
       return answers.objBasis === 'get information about properties'
     },
   },
-]
+
+  //--- arrays ---//
+  createAnswers('add', 'add items or other arrays'),
+  createAnswers('remove', 'remove items'),
+  createAnswers('iterate', 'walk over items'),
+  createAnswers('string', 'return a string'),
+  createAnswers('order', 'order an array'),
+  createAnswers('other', 'something else'),
+  //arrays with find, which is nested
+  createAnswers('single', 'one item', arr.find, 'find'),
+  createAnswers('many', 'one or many items', arr.find, 'find'),
+
+  //--- objects ---//
+  createAnswers('createObj', 'create an object', obj, 'objBasis'),
+  createAnswers('createProp', 'create properties', obj, 'objBasis'),
+  createAnswers('infoObj', 'get information about an object', obj, 'objBasis'),
+  createAnswers('noChange', 'restrict changes to an object', obj, 'objBasis'),
+  createAnswers(
+    'createString',
+    'create a string from an object',
+    obj,
+    'objBasis'
+  ),
+  createAnswers('prototype', 'manage prototypes', obj, 'objBasis'),
+  //objects with details, which is nested
+  createAnswers(
+    'details',
+    'details about the property',
+    obj.infoProp,
+    'infoProp'
+  ),
+  createAnswers(
+    'list',
+    'a list of all of the keys and/or values',
+    obj.infoProp,
+    'infoProp'
+  )]
 
 function createAnswers(
   type,
@@ -71,55 +107,15 @@ function createAnswers(
   structInput = arr,
   answerBasis = 'arrayBasis'
 ) {
-  questions.push({
+  return {
     type: 'list',
     name: type,
     message: `I need to ${type}`,
     choices: structInput[type].map((item) => item.shortDesc),
     when(answers) {
       return answers[answerBasis] === prompt
-    },
-  })
+    }
+  }
 }
-
-const fullQuestions = () => {
-  // arrays
-  createAnswers('add', 'add items or other arrays')
-  createAnswers('remove', 'remove items')
-  createAnswers('iterate', 'walk over items')
-  createAnswers('string', 'return a string')
-  createAnswers('order', 'order an array')
-  createAnswers('other', 'something else')
-  //arrays with find, which is nested
-  createAnswers('single', 'one item', arr.find, 'find')
-  createAnswers('many', 'one or many items', arr.find, 'find')
-
-  //objects
-  createAnswers('createObj', 'create an object', obj, 'objBasis')
-  createAnswers('createProp', 'create properties', obj, 'objBasis')
-  createAnswers('infoObj', 'get information about an object', obj, 'objBasis')
-  createAnswers('noChange', 'restrict changes to an object', obj, 'objBasis')
-  createAnswers(
-    'createString',
-    'create a string from an object',
-    obj,
-    'objBasis'
-  )
-  createAnswers('prototype', 'manage prototypes', obj, 'objBasis')
-  //objects with details, which is nested
-  createAnswers(
-    'details',
-    'details about the property',
-    obj.infoProp,
-    'infoProp'
-  )
-  createAnswers(
-    'list',
-    'a list of all of the keys and/or values',
-    obj.infoProp,
-    'infoProp'
-  )
-}
-fullQuestions()
 
 export { questions }
