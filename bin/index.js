@@ -11,6 +11,7 @@ import { logFinalAnswer } from './logFinalAnswer.js'
 greeting()
 
 inquirer.prompt(questions).then((answers) => {
-  const finalAnswer = findFinalAnswer(answers)
-  logFinalAnswer(finalAnswer)
+  console.log(answers)
+  // const finalAnswer = findFinalAnswer(answers)
+  // logFinalAnswer(finalAnswer)
 })
