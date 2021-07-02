@@ -4,7 +4,7 @@ export const arr = {
   add: [
     {
       name: 'splice',
-      shortDesc: 'element/s to an array',
+      shortDesc: 'add element/s to an array',
       desc: 'Adds and/or removes elements from an array.',
       example: `arr.splice(2, 0, 'tacos');
 console.log(arr);`,
@@ -12,7 +12,7 @@ console.log(arr);`,
     },
     {
       name: 'push',
-      shortDesc: 'elements to the end of an array',
+      shortDesc: 'add elements to the end of an array',
       desc: 'Adds one or more elements to the end of an array and returns the new length of the array.',
       example: `arr.push(2);
 console.log(arr);`,
@@ -20,7 +20,7 @@ console.log(arr);`,
     },
     {
       name: 'unshift',
-      shortDesc: 'elements to the front of an array',
+      shortDesc: 'add elements to the front of an array',
       desc: 'Adds one or more elements to the front of an array and returns the new length of the array.',
       example: `arr.unshift(2, 7);
 console.log(arr);`,
@@ -28,7 +28,7 @@ console.log(arr);`,
     },
     {
       name: 'concat',
-      shortDesc: 'this array to other array(s) and/or value(s)',
+      shortDesc: 'add this array to other array(s) and/or value(s)',
       desc: 'Returns a new array comprised of this array joined with other array(s) and/or value(s).',
       example: `let arr2 = ['a', 'b', 'c'];
 let arr3 = arr.concat(arr2);
@@ -39,7 +39,7 @@ console.log(arr3);`,
   remove: [
     {
       name: 'splice',
-      shortDesc: 'element/s from an array',
+      shortDesc: 'remove element/s from an array',
       desc: 'Adds and/or removes elements from an array.',
       example: `arr.splice(2, 1);
 console.log(arr);`,
@@ -47,7 +47,7 @@ console.log(arr);`,
     },
     {
       name: 'pop',
-      shortDesc: 'the last element of the array',
+      shortDesc: 'remove the last element of the array',
       desc: 'Removes the last element from an array and returns that element.',
       example: `arr.pop();
 console.log(arr);`,
@@ -55,7 +55,7 @@ console.log(arr);`,
     },
     {
       name: 'shift',
-      shortDesc: 'the first element of the array',
+      shortDesc: 'remove the first element of the array',
       desc: 'Removes the first element from an array and returns that element.',
       example: `arr.shift();
 console.log(arr);`,
@@ -64,7 +64,7 @@ console.log(arr);`,
     {
       name: 'slice',
       shortDesc:
-        'one or more elements in order for use, leaving the array as is',
+        'remove one or more elements in order for use, leaving the array as is',
       desc: `The ${chalk.cyan(
         'slice()'
       )} method returns a shallow copy of a portion of an array into a new array object. You can specify either just the beginning element (where end will default to the arrays length) or both the beginning and the end, comma-separated. The original array will not be modified.`,
@@ -153,7 +153,7 @@ console.log(arr);`,
   iterate: [
     {
       name: 'forEach',
-      shortDesc: 'executing a function I will create for each element',
+      shortDesc: 'execute a function I will create for each element',
       desc: 'The forEach() method executes a provided function once for each array element.',
       example: `arr.forEach((element) => {
   console.log(element)
@@ -165,15 +165,23 @@ console.log(arr);`,
     {
       name: 'map',
       shortDesc:
-        'creating a new array from each element with a function I create',
+        'create a new array from each element with a function I create',
       desc: 'Creates a new array with the results of calling a provided function on every element in this array.',
       example: `let map = arr.map(x => x + 1);
 console.log(map);`,
       output: `[6, 2, 9]`,
     },
     {
+      name: 'reduce',
+      shortDesc: 'iterate through the array, and reduce it to a single value, object, or array',
+      desc: 'Apply a function against an accumulator and each value of the array (from left-to-right) as to reduce it to a single value.',
+      example: `let reducer = (a, b) => a + b;
+console.log(arr.reduce(reducer));`,
+      output: `14`,
+    },
+    {
       name: 'entries',
-      shortDesc: 'creating an iterator object',
+      shortDesc: 'create an iterator object',
       desc: `Returns a new Array Iterator object that contains the key/value pairs for each index in the array. There are a lot of uses for iterators, as well as other methods used with it in conjuction, like ${chalk.cyan(
         'values'
       )} and ${chalk.cyan('keys')}`,
@@ -188,28 +196,28 @@ console.log(iterator.next().value);`,
     single: [
       {
         name: 'includes',
-        shortDesc: 'out if a certain element exists',
+        shortDesc: 'find out if a certain element exists',
         desc: 'Determines whether an array contains a certain element, returning true or false as appropriate.',
         example: `console.log(arr.includes(1));`,
         output: `true`,
       },
       {
         name: 'indexOf',
-        shortDesc: 'the first index of a particular item',
+        shortDesc: 'find the first index of a particular item',
         desc: 'Returns the first index at which a given element can be found in the array, or -1 if it is not present.',
         example: `console.log(arr.indexOf(5));`,
         output: `0`,
       },
       {
         name: 'lastIndexOf',
-        shortDesc: 'the last index of a particular item',
+        shortDesc: 'find the last index of a particular item',
         desc: 'Returns the last (greatest) index of an element within the array equal to the specified value, or -1 if none is found.',
         example: `console.log(arr.lastIndexOf(5));`,
         output: `0`,
       },
       {
         name: 'find',
-        shortDesc: 'the first element that satisfies a condition',
+        shortDesc: 'find the first element that satisfies a condition',
         desc: `Returns the found value in the array, if an element in the array satisfies the provided testing function or undefined if not found. Similar to ${chalk.cyan(
           'findIndex()'
         )}, but it returns the item instead of the index.`,
@@ -219,7 +227,7 @@ console.log(iterator.next().value);`,
       },
       {
         name: 'findIndex',
-        shortDesc: 'the first index of an item that satisfies a condition',
+        shortDesc: 'find the first index of an item that satisfies a condition',
         desc: `Returns the index of the first element in the array that satisfies the provided testing function. Otherwise -1 is returned. Similar to ${chalk.cyan(
           'find()'
         )}, but it returns the index instead of the item.`,
@@ -229,7 +237,7 @@ console.log(iterator.next().value);`,
       },
       {
         name: 'reduce',
-        shortDesc: 'a value by reducing the Array, start to finish',
+        shortDesc: 'find a value by reducing the Array, start to finish',
         desc: 'Apply a function against an accumulator and each value of the array (from left-to-right) as to reduce it to a single value.',
         example: `let reducer = (a, b) => a + b;
   console.log(arr.reduce(reducer));`,
@@ -237,7 +245,7 @@ console.log(iterator.next().value);`,
       },
       {
         name: 'reduceRight',
-        shortDesc: 'a value by reducing the Array, finish to start',
+        shortDesc: 'find a value by reducing the Array, finish to start',
         desc: 'Apply a function against an accumulator and each value of the array (from right-to-left) as to reduce it to a single value.',
         example: `[arr, [0, 1]].reduceRight((a, b) => {
     return a.concat(b)
@@ -248,7 +256,7 @@ console.log(iterator.next().value);`,
     many: [
       {
         name: 'filter',
-        shortDesc: 'values based on a condition I create',
+        shortDesc: 'filter values based on a condition I create',
         desc: 'Creates a new array with all of the elements of this array for which the provided filtering function returns true.',
         example: `let filtered = arr.filter(el => el > 4);
   console.log(filtered)`,
@@ -256,7 +264,7 @@ console.log(iterator.next().value);`,
       },
       {
         name: 'every',
-        shortDesc: 'whether or not every item satisfies a condition',
+        shortDesc: 'find out whether or not every item satisfies a condition',
         desc: 'Returns true if every element in this array satisfies the provided testing function.',
         example: `let isSmall = (el) => el < 10;
   console.log(arr.every(isSmall));`,
@@ -264,7 +272,7 @@ console.log(iterator.next().value);`,
       },
       {
         name: 'some',
-        shortDesc: 'whether or not at least one item satisfies a condition',
+        shortDesc: 'find out whether or not at least one item satisfies a condition',
         desc: 'Returns true if at least one element in this array satisfies the provided testing function.',
         example: `let biggerThan4 = (el) => el > 4;
   console.log(arr.some(biggerThan4));`,
