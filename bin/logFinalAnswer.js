@@ -8,8 +8,15 @@ const log = console.log
 const divider = `\n.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo`
 
 export function logFinalAnswer(finalAnswer) {
-  log(chalk.blackBright(divider))
+  const initialCode = finalAnswer.structure === `array` ? 
+  `let arr = [5, 1, 8];` : 
+  `let obj = {
+  a: 1,
+  b: 2,
+  c: 3
+};`
 
+  log(chalk.blackBright(divider))
   //title and description
   log(chalk.yellowBright.bold.underline(`\nArray.${finalAnswer.name}()`))
   log(wrapAnsi('\n' + finalAnswer.desc + '\n', 70))
@@ -23,7 +30,7 @@ export function logFinalAnswer(finalAnswer) {
   }
   const code =
     chalk.blackBright('Usage:\n') +
-    chalk.cyanBright(`let arr = [5, 1, 8];\n${finalAnswer.example}\n\n`) +
+    chalk.cyanBright(`${initialCode}\n\n${finalAnswer.example}\n\n`) +
     chalk.blackBright('Output:\n') +
     chalk.cyan(finalAnswer.output)
 

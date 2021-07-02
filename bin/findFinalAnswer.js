@@ -9,9 +9,12 @@ function nestedAnswer(type, dataStructure, answers) {
   let lastValue = type ? dataStructure[type][lastProp] : dataStructure[lastProp]
   let finalIndex = lastValue.map((o) => o.shortDesc).indexOf(answers[lastProp])
 
-  return type
+  let finalAnswer = type
     ? dataStructure[type][lastProp][finalIndex]
     : dataStructure[lastProp][finalIndex]
+
+  finalAnswer.structure = answers.structure
+  return finalAnswer
 }
 
 export function findFinalAnswer(answers) {
