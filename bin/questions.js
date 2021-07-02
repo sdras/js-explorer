@@ -1,6 +1,7 @@
 import { arr } from './arrayMethod.js'
 import { obj } from './objectMethod.js'
 
+//the questions and conditions that will populate inquirer, fed from the array and object JSON
 const questions = [
   {
     type: 'list',
@@ -101,6 +102,7 @@ const questions = [
     'infoProp'
   )]
 
+//generate the answer object for all the different options in arrays and object
 function createAnswers(
   type,
   prompt,

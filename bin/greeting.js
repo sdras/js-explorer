@@ -7,6 +7,7 @@ import indentString from 'indent-string'
 const log = console.log
 
 export const greeting = () => {
+  //create initial message box
   const welcome =
     chalk.yellow(figures.star) +
     chalk.cyan(' Welcome to the JavaScript Explorer! ') +
@@ -21,11 +22,13 @@ export const greeting = () => {
   }
   const msgBox = boxen(welcome, welcomeBox)
 
+  //create subtitle
   const subtitle = chalk.blueBright.italic(
     'Find the array method you need without digging through the docs\n'
   )
   const wrappedSubtitle = wrapAnsi(subtitle, 35)
 
+  //log them both
   log(msgBox)
   log(indentString(wrappedSubtitle, 8))
 }

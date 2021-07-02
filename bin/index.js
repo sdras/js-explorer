@@ -10,15 +10,17 @@ import { questions } from './questions.js'
 import { findFinalAnswer } from './findFinalAnswer.js'
 import { logFinalAnswer } from './logFinalAnswer.js'
 
-let finalAnswer
-
+// initial greeting box
 greeting()
 
+// kick off inquirer with the questions array
 inquirer.prompt(questions).then((answers) => {
-  finalAnswer =
+  // gather information about the final answer
+  const finalAnswer =
     answers.structure === 'array'
       ? findFinalAnswer(answers, arr)
       : findFinalAnswer(answers, obj)
 
+  // log the final answer
   logFinalAnswer(finalAnswer)
 })

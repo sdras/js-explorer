@@ -9,9 +9,12 @@ const divider = `\n.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo`
 
 export function logFinalAnswer(finalAnswer) {
   log(chalk.blackBright(divider))
+
+  //title and description
   log(chalk.yellowBright.bold.underline(`\nArray.${finalAnswer.name}()`))
   log(wrapAnsi('\n' + finalAnswer.desc + '\n', 70))
 
+  //create the box with the code example
   const codeBox = {
     padding: 1,
     borderStyle: 'doubleSingle',
@@ -27,6 +30,7 @@ export function logFinalAnswer(finalAnswer) {
   const codeOutput = boxen(code, codeBox)
   log(codeOutput)
 
+  //docs link, displays differently based on terminal link support
   const mozLink = `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/${finalAnswer.name}`
 
   if (supportsHyperlinks.stdout) {
