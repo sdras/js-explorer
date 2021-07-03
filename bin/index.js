@@ -2,6 +2,7 @@
 
 'use strict'
 import inquirer from 'inquirer'
+import minimist from 'minimist'
 
 import { arr } from './arrayMethod.js'
 import { obj } from './objectMethod.js'
@@ -24,6 +25,16 @@ inquirer.prompt(questions).then((answers) => {
 
   // log the final answer
   logFinalAnswer(finalAnswer)
-  // ask them if they want to store it in a config
-  storeConfig(finalAnswer)
+
+  // see if there's an argument passed to show it plainly
+  // if not, do the prompts to store it
+  const [ node, file, ...args ] = process.argv;
+  const argv = minimist(args);
+
+  if (argv._.includes('p')) {
+    return
+  } else {
+    // ask them if they want to store it in a config
+    storeConfig(finalAnswer)
+  }
 })

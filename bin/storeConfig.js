@@ -1,6 +1,5 @@
 import inquirer from 'inquirer'
 import { store } from './store.js'
-const log = console.log
 
 const configQuestion = [
   {
