@@ -9,6 +9,7 @@ import { greeting } from './greeting.js'
 import { questions } from './questions.js'
 import { findFinalAnswer } from './findFinalAnswer.js'
 import { logFinalAnswer } from './logFinalAnswer.js'
+import { storeConfig } from './storeConfig.js'
 
 // initial greeting box
 greeting()
@@ -23,4 +24,6 @@ inquirer.prompt(questions).then((answers) => {
 
   // log the final answer
   logFinalAnswer(finalAnswer)
+  // ask them if they want to store it in a config
+  storeConfig(finalAnswer)
 })

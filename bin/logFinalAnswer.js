@@ -54,4 +54,5 @@ export function logFinalAnswer(finalAnswer) {
     )
   }
   log(chalk.blackBright(divider))
+  log('\n')
 }
