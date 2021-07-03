@@ -20,5 +20,5 @@ inquirer.prompt(clearQuestion).then((answer) => {
     store.clear()
   }
 
-  console.log(chalk.cyan('jsexplorer ' + figures.arrowRight) + ' entries all cleared!')
+  console.log(chalk.cyan('\njsexplorer ' + figures.arrowRight) + ' entries all cleared!\n')
 })
