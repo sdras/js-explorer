@@ -36,6 +36,7 @@
     "hyperlinker": "^1.0.0",
     "indent-string": "^5.0.0",
     "inquirer": "^8.1.1",
+    "marked-man": "^0.7.0",
     "minimist": "^1.2.5",
     "supports-hyperlinks": "^2.2.0"
   }

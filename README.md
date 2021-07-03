@@ -10,7 +10,7 @@ It's been 4 years since I released the [Array](https://github.com/sdras/array-ex
 
 ## Usage
 
-I recommend installing the tool globally, so that you can make use of it no matter what project you're working on:
+I recommend installing the tool globally, so that you can make use of it no matter what project you're working on, but you can take out `-g` flag if you want to use it in particular projects instead:
 
 ```
 npm i -g js-explorer
