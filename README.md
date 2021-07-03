@@ -4,7 +4,7 @@
 
 When I was first learning array and object methods, I spent a lot of time digging through the docs to find the appropriate one, and I had to search one by one. I made this resource to help people find the correct object method a bit more naturally. You can narrow down what you want to do and explore until you find what's most useful to you.
 
-![jsexplorer-demo](https://user-images.githubusercontent.com/2281088/124360460-2e8f3e80-dbe7-11eb-918b-ec2e356b7ac9.gif)
+![Demo of JS Explorer running](https://user-images.githubusercontent.com/2281088/124367352-a2474080-dc13-11eb-9779-e871f1754dd1.gif)
 
 It's been 4 years since I released the [Array](https://github.com/sdras/array-explorer) and [Object](https://github.com/sdras/object-explorer) Explorers as tools for the community. I realized it interrupts flow state to have to go to a web app to use them, so I thought a command line tool might be a better developer experience.
 
