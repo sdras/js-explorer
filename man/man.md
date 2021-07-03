@@ -19,3 +19,12 @@ If you save an entry, you can run lookup and the string to find that entry and p
 
 `clearlookup`
 Clears all jsexplorer saved entries
+
+## BUGS
+
+Please report any bugs to https://github.com/sdras/js-explorer/issues.
+
+
+## LICENSE
+
+Copyright (c) 2021, Sarah Drasner (MIT License).
