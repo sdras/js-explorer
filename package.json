@@ -4,7 +4,8 @@
   "description": "A terminal-based resource to help you find js methods without digging through the docs",
   "main": "bin/index.js",
   "bin": {
-    "jsexplorer": "./bin/index.js"
+    "jsexplorer": "./bin/index.js",
+    "lookup": "./bin/lookup.js"
   },
   "scripts": {
     "test": "test"
@@ -34,6 +35,7 @@
     "hyperlinker": "^1.0.0",
     "indent-string": "^5.0.0",
     "inquirer": "^8.1.1",
+    "minimist": "^1.2.5",
     "supports-hyperlinks": "^2.2.0"
   }
 }

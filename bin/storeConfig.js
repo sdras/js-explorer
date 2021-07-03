@@ -1,9 +1,6 @@
-import fs from 'fs'
 import inquirer from 'inquirer'
-import Configstore from 'configstore';
-const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+import { store } from './store.js'
 const log = console.log
-const config = new Configstore(packageJson.name, {foo: 'bar'})
 
 const configQuestion = [
   {
@@ -16,7 +13,7 @@ const configQuestion = [
     type: 'input',
     name: 'namedConfig',
     message: "What do you want to name it?",
-    default: 'That one that I keep forgetting',
+    default: "The one I always forget!",
     when(answers) {
       return answers.confirmStore === true
     },
@@ -25,10 +22,6 @@ const configQuestion = [
 
 export const storeConfig = (finalAnswer) => {
   inquirer.prompt(configQuestion).then((answers) => {
-    log(answers)
-    config.set(answers.namedConfig, finalAnswer)
-
-    log(config.get('foo'))
-    log(config.get('idea'))
+    store.set(answers.namedConfig, finalAnswer)
   })
 }
