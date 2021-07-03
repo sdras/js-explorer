@@ -112,7 +112,7 @@ function createAnswers(
   return {
     type: 'list',
     name: type,
-    message: `I need to `,
+    message: `I need to`,
     choices: structInput[type].map((item) => item.shortDesc),
     when(answers) {
       return answers[answerBasis] === prompt
