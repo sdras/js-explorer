@@ -5,7 +5,8 @@
   "main": "bin/index.js",
   "bin": {
     "jsexplorer": "./bin/index.js",
-    "lookup": "./bin/lookup.js"
+    "lookup": "./bin/lookup.js",
+    "clearlookup": "./bin/clearLookup.js"
   },
   "scripts": {
     "test": "test"

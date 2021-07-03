@@ -22,7 +22,37 @@ Then, to kick off the explorer, type:
 jsexplorer
 ```
 
-You will be guided through prompts to find your method!
+You will be guided through prompts to find your method! 
+
+It will also allow you to save the entry at the end (optional.)
+
+### Other commands
+
+```
+jsexplorer plain
+```
+Runs the tool without asking to save at the end.
+
+```
+jsexplorer -p
+```
+Same as above, aliased p for plain.
+
+```
+lookup [string to look up]
+```
+If you save an entry, you can run lookup and the string to find that entry and print it.
+
+For example, let's say you ran the explorer and at the end when it prompts you to save, you saved `Array.slice()` as "That one I always mix up with the other one!"
+You would type `lookup That one I always mix up with the other one!`
+
+A more simple example might be `slice`, in which case you would run `lookup slice`.
+
+```
+clearlookup
+```
+
+Clears all saved jsexplorer entries.
 
 ## More information on the project
 

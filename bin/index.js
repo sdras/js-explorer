@@ -29,9 +29,11 @@ inquirer.prompt(questions).then((answers) => {
   // see if there's an argument passed to show it plainly
   // if not, do the prompts to store it
   const [ node, file, ...args ] = process.argv;
-  const argv = minimist(args);
+  const argv = minimist(args, {
+    alias: { p: 'plain' }
+  });
 
-  if (argv._.includes('p')) {
+  if (argv._.includes('plain') || argv.p === true) {
     return
   } else {
     // ask them if they want to store it in a config
