@@ -1,6 +1,6 @@
 {
   "name": "js-explorer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A terminal-based resource to help you find js methods without digging through the docs",
   "main": "bin/index.js",
   "bin": {
