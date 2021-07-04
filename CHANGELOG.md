@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.3
+
+- Fix typo, change formatting of confirm
+- Update man page
 ## 1.1.2
 
 - Give a confirm and next step message
