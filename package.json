@@ -1,6 +1,7 @@
 {
   "name": "js-explorer",
-  "version": "1.1.0",
+  "version": "1.1.1",
+  "author": "sdras",
   "description": "A terminal-based resource to help you find js methods without digging through the docs",
   "main": "bin/index.js",
   "bin": {
@@ -26,7 +27,7 @@
     "terminal"
   ],
   "type": "module",
-  "author": "sdras",
+  "preferGlobal": true,
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sdras/js-explorer/issues"
