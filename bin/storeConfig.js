@@ -1,3 +1,4 @@
+import chalk from 'chalk'
 import inquirer from 'inquirer'
 import { store } from './store.js'
 
@@ -22,5 +23,8 @@ const configQuestion = [
 export const storeConfig = (finalAnswer) => {
   inquirer.prompt(configQuestion).then((answers) => {
     store.set(answers.namedConfig, finalAnswer)
+
+    console.log(`\nGreat! This is now stored.
+You can access it anytime by running` + chalk.cyan('lookup ' + answers.namedConfig) + '\n')
   })
 }

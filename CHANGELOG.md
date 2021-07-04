@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.2
+
+- Give a confirm and next step message
+
 ## 1.1.1
 
 - Add preferGlobal flag in package.json
