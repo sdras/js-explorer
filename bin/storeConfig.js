@@ -25,6 +25,6 @@ export const storeConfig = (finalAnswer) => {
     store.set(answers.namedConfig, finalAnswer)
 
     console.log(`\nGreat! This is now stored.
-You can access it anytime by running` + chalk.cyan('lookup ' + answers.namedConfig) + '\n')
+You can access it anytime by running ` + chalk.magenta('lookup ' + answers.namedConfig) + '\n')
   })
 }
