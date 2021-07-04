@@ -16,6 +16,8 @@ I recommend installing the tool globally, so that you can make use of it no matt
 npm i -g js-explorer
 ```
 
+> Note: You may need to run `sudo` before this command- `sudo npm i -g js-explorer`
+
 Then, to kick off the explorer, type:
 
 ```
@@ -46,7 +48,7 @@ If you save an entry, you can run lookup and the string to find that entry and p
 For example, let's say you ran the explorer and at the end when it prompts you to save, you saved `Array.slice()` as "That one I always mix up with the other one!"
 You would type `lookup That one I always mix up with the other one!`
 
-A more simple example might be `slice`, in which case you would run `lookup slice`.
+A more simple example might be `homeslice`, in which case you would run `lookup homeslice`.
 
 ```
 clearlookup
@@ -60,4 +62,4 @@ I realize that there are about a million ways that this resource can be set up, 
 
 I based most of the longer descriptions off of the MDN documentation, altering it slightly where I felt the description was not as beginner-friendly as it could be. The examples were kept as simple as humanly possible for the purpose of scanning with the least cognitive load, you may need extra details provided in the MDN documentation for every possible usage.
 
-**Enjoy!**
+**Enjoy! 🌮**
