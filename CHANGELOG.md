@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.4
+
+- Update the demo gif
+
 ## 1.1.3
 
 - Fix typo, change formatting of confirm
