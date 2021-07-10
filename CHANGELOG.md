@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.5
+
+- Update readme
+
 ## 1.1.4
 
 - Update the demo gif
@@ -8,6 +12,7 @@
 
 - Fix typo, change formatting of confirm
 - Update man page
+
 ## 1.1.2
 
 - Give a confirm and next step message
