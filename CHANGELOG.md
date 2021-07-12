@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.6
+
+- Fix path bug in package.json
+
 ## 1.1.5
 
 - Update readme

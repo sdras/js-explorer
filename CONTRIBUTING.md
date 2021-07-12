@@ -1,4 +1,4 @@
-# Contributing to Fortnite Theme
+# Contributing to JS Explorer
 
 So, you'd like to contribute to JS Explorer? Awesome!
 

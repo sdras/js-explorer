@@ -1,9 +1,9 @@
 {
   "name": "js-explorer",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "author": "sdras",
   "description": "A terminal-based resource to help you find js methods without digging through the docs",
-  "main": "bin/index.js",
+  "main": "./bin/index.js",
   "bin": {
     "jsexplorer": "./bin/index.js",
     "lookup": "./bin/lookup.js",
