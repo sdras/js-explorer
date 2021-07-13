@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.7
+
+- Fix package.json ENOENT error on some OS
+
 ## 1.1.6
 
 - Fix path bug in package.json
