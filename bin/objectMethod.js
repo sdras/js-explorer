@@ -306,7 +306,7 @@ console.log(obj.d.toLocaleString());`,
       },
     ],
   },
-  prototype: [
+  managePrototypes: [
     {
       name: 'getPrototypeOf',
       shortDesc: `get a prototype of the object.`,

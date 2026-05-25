@@ -87,7 +87,7 @@ const questions = [
     obj,
     'objBasis'
   ),
-  createAnswers('prototype', 'manage prototypes', obj, 'objBasis'),
+  createAnswers('managePrototypes', 'manage prototypes', obj, 'objBasis'),
   //objects with details, which is nested
   createAnswers(
     'details',
